@@ -1,45 +1,97 @@
-﻿# Tibia_XP_trackerDiscord
-Sobre o Projeto
-Olá! Eu sou um grande fã de Tibia e jogador dedicado que sempre sentiu falta de um bot no Discord que pudesse trazer informações detalhadas de experiência e status dos personagens, algo parecido com serviços como o GuildStats, mas focado no tracking de XP e ranking.
+# 🎮 Tibia XP Tracker Discord Bot 🐉  
+*Um fanservice criado por jogadores, para jogadores!*  
 
-Esse projeto nasceu justamente para suprir essa necessidade, trazendo um bot fácil de usar que consulta dados atualizados direto da API oficial do TibiaData e apresenta no Discord informações importantes sobre seu personagem ou outros que desejar acompanhar.
+## 🌟 Sobre o Projeto  
+Bot para Discord que consulta dados oficiais de personagens do Tibia via API, mostrando experiência, status e informações detalhadas. Projeto perfeito para treinar lógica de programação e integração com APIs!
 
-Tecnologias Utilizadas
-Python – Linguagem principal do bot.
+```bash
+✨ Funcionalidades:
+- Consulta de personagens (nível, vocação, mundo)
+- Tracking de experiência e ranking
+- Status online em tempo real
+- Histórico de mortes e último login
+```
 
-discord.py – Biblioteca para integração com o Discord.
+## ⚙️ Tecnologias Utilizadas
+| Ferramenta | Função |
+|------------|--------|
+| **Python** | Lógica principal |
+| **discord.py** | Integração com Discord |
+| **Requests** | Comunicação com API |
+| **TibiaData API v4** | Dados do jogo |
+| **python-dotenv** | Gerenciamento de variáveis |
 
-requests – Para fazer chamadas HTTP na API do TibiaData.
+## 🚀 Configuração Rápida
 
-API TibiaData (v4) – Fonte oficial dos dados do jogo, usada para buscar detalhes do personagem e ranking de experiência.
+### 1. Clone o repositório:
+```bash
+git clone https://github.com/seu-usuario/Tibia_XP_trackerDiscord.git
+cd Tibia_XP_trackerDiscord
+```
 
-Git & GitHub – Controle de versão e hospedagem do código.
+### 2. Crie ambiente virtual (recomendado):
+```bash
+python -m venv venv
+# Ative o ambiente:
+# Linux/Mac: source venv/bin/activate
+# Windows: .\venv\Scripts\activate
+```
 
-Funcionalidades
-Consulta rápida de dados do personagem (nível, vocação, mundo, experiência, status online, mortes e último login).
+### 3. Instale dependências:
+```bash
+pip install -r requirements.txt
+```
 
-Busca na API oficial TibiaData, percorrendo até 20 páginas de ranking para encontrar o XP real do personagem.
+### 4. Crie o arquivo .env:
+```bash
+# Execute na raiz do projeto:
+echo "DISCORD_TOKEN=seu_token_aqui" > .env
+```
 
-Comandos simples via chat do Discord para obter essas informações instantaneamente.
+### 🔑 Como obter o token do bot:
+1. Acesse [Discord Developer Portal](https://discord.com/developers/applications)
+2. Crie uma New Application > Bot > Add Bot
+3. Copie o token (em TOKEN)
+4. Cole no `.env` substituindo `seu_token_aqui`
 
-Como usar
-Clone o repositório
+### 5. Execute o bot:
+```bash
+python main.py
+```
 
-Configure o arquivo .env com seu token do Discord
+## 💻 Comandos no Discord
+| Comando | Exemplo | Função |
+|---------|---------|--------|
+| `!character <nome>` | `!character Galarzaa` | Status completo |
+| `!xp <nome>` | `!xp Bobeek` | Detalhes de XP |
+| `!help` | `!help` | Ajuda |
 
-Instale as dependências via pip install -r requirements.txt
+## 🧠 Lógica de Funcionamento
+```mermaid
+graph TD
+    A[Comando !character] --> B[Consulta API TibiaData]
+    B --> C{Personagem existe?}
+    C -->|Sim| D[Processa dados]
+    C -->|Não| E[Erro: não encontrado]
+    D --> F[Calcula XP/ranking]
+    F --> G[Formata embed]
+    G --> H[Exibe no Discord]
+```
 
-Execute o bot pelo main.py
+**Pontos para estudo**:
+- Paginação de resultados da API (até 20 páginas)
+- Tratamento de erros de API
+- Formatação de dados complexos
+- Cache de requisições
 
-No Discord, use o comando:
+## 🔮 Futuro
+- Tracking de guildas
+- Histórico de mortes
+- Comparativo de XP/hora
+- Notificações de login
 
-!character <nome_do_personagem>
-para obter as informações do personagem desejado.
-
-Futuro
-Pretendo expandir com mais comandos úteis, filtros para guildas, tracking de mortes e tempo online, além de melhorias na performance e usabilidade.
-
-
-Licença
-Este projeto está sob a licença MIT — sinta-se à vontade para usar, modificar e contribuir.
-
+## 📜 Licença MIT
+```text
+Permissões: uso comercial, modificação, distribuição
+Restrições: deve incluir licença original
+```
