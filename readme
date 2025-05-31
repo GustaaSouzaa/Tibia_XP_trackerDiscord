@@ -1,0 +1,22 @@
+# Tibia XP Tracker Bot
+
+Bot para Discord que busca e exibe informações detalhadas de personagens do Tibia, incluindo nível, vocação, mundo, experiência e status online. Utiliza a API pública do TibiaData para consultar dados do personagem e rankings de experiência.
+
+---
+
+## Funcionalidades
+
+- Consulta dados de personagem por nome
+- Busca experiência do personagem nas 20 primeiras páginas do ranking de experiência do seu mundo
+- Mostra informações como nível, vocação, mundo, experiência, último login e número de mortes
+- Integração simples com Discord para responder comandos no chat
+
+---
+
+## Como usar
+
+1. Clone o repositório:  
+   ```bash
+   git clone https://github.com/seuusuario/tibia-xp-tracker.git
+   cd tibia-xp-tracker
+
